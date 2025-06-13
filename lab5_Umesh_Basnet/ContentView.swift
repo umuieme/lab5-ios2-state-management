@@ -14,11 +14,11 @@ struct ContentView: View {
         Group {
             switch authState {
             case .login:
-                LoginScreen()
+                LoginScreen(authState: $authState)
             case .register:
-                RegisterScreen()
+                RegisterScreen(authState: $authState)
             case .home:
-                DashboardScreen()
+                DashboardScreen(authState: $authState)
             }
         }
         .environmentObject(patient)

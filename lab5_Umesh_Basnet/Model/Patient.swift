@@ -10,21 +10,28 @@ import Foundation
 class Patient : ObservableObject {
     @Published var name : String
     @Published var email: String
-    @Published var allergies: [String]
+    @Published var allergies: String
     @Published var medicalHistory: String
     
     init() {
         self.name = ""
         self.email = ""
-        self.allergies = []
+        self.allergies = ""
         self.medicalHistory = ""
     }
     
-    init(name: String, email: String, allergies: [String], medicalHistory: String) {
+    init(name: String, email: String, allergies: String, medicalHistory: String) {
         self.name = name
         self.email = email
         self.allergies = allergies
         self.medicalHistory = medicalHistory
+    }
+    
+    func clear () {
+        self.name = ""
+        self.email = ""
+        self.allergies = ""
+        self.medicalHistory = ""
     }
     
 }
